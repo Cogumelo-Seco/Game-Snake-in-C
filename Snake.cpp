@@ -34,10 +34,12 @@ int main() {
     while (loser) {
         if (_kbhit()) {
         	newKeyPress = _getch();
-        	if (keyPress == 'w' && newKeyPress != 's') keyPress = newKeyPress;
-        	if (keyPress == 's' && newKeyPress != 'w') keyPress = newKeyPress;
-        	if (keyPress == 'a' && newKeyPress != 'd') keyPress = newKeyPress;
-        	if (keyPress == 'd' && newKeyPress != 'a') keyPress = newKeyPress;
+        	if (newKeyPress == 'w' || newKeyPress == 'a' || newKeyPress == 's' || newKeyPress == 'd') {
+	        	if (keyPress == 'w' && newKeyPress != 's') keyPress = newKeyPress;
+	        	if (keyPress == 's' && newKeyPress != 'w') keyPress = newKeyPress;
+	        	if (keyPress == 'a' && newKeyPress != 'd') keyPress = newKeyPress;
+	        	if (keyPress == 'd' && newKeyPress != 'a') keyPress = newKeyPress;
+	        }
 		}
         
         timer += 1;
